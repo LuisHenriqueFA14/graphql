@@ -6,7 +6,10 @@ class CreateUserService {
 		for(let j = 0; j <= DataBase.length; j += 1) {
 			if(email == DataBase[j].email) {
 				return {
-					error: "Email already in use",
+					message: {
+						type: "error",
+						content: "Email already in use",
+					}
 				}
 			}
 		}

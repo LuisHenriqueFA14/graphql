@@ -13,7 +13,7 @@ const app = express();
 
 app.use('/graphql', graphqlHTTP({
 	schema: schema,
-	rootValue: resolvers,
+	rootValue: {...resolvers.Query, ...resolvers.Mutation},
 	graphiql: true,
 }));
 

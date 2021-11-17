@@ -6,13 +6,15 @@ class DeleteUserService {
 			if(id == DataBase[j].id) {
 				DataBase.pop(j);
 				return {
-					message: "User deleted successfully!"
+					type: "message",
+					content: "User deleted successfully!"
 				}
 			}
 		}
 
 		return {
-			error: "User not found!"
+			type: "error",
+			content: "User not found!"
 		}
 	}
 }

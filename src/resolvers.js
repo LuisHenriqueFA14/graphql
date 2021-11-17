@@ -5,12 +5,13 @@ const { CreateUserController } = require('./controllers/CreateUserController');
 
 module.exports = {
 	Query: {
-		users: (_) => new GetAllUsersController().handle(),
-		user: (_, data) => new GetUserController().handle(data),
+		users: new GetAllUsersController().handle,
+		user: new GetUserController().handle,
 	},
 
 	Mutation: {
-		createUser: (_, data) => new CreateUserController().handle(data),
-		deleteUser: (_, data) => new DeleteUserController().handle(data),
+		createUser: new CreateUserController().handle,
+		deleteUser: new DeleteUserController().handle,
 	}
 }
+

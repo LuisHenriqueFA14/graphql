@@ -1,19 +1,23 @@
 const { GetUserService } = require('../services/GetUserService');
 
 class GetUserController {
-	handle(data) {
+	handle(obj) {
 		const service = new GetUserService();
 
-		if(!data.id) {
+		if(!obj.id) {
 			return {
-				statusCode: 400,
-				body: {
-					error: 'Missing id'
-				}
+				statusCode: 401,
+				user: null,
+				id: null,
+				email: null,
 			}
 		}
 
-		return service.execute(data.id);
+		const result = service.execute(obj.id);
+
+		console.log(result);
+
+		return result;
 	}
 }
 

@@ -1,17 +1,17 @@
 const { CreateUserService } = require('../services/CreateUserService');
 
 class CreateUserController {
-	handle(data) {
+	handle(obj) {
 		const service = new CreateUserService();
 
-		if(!data.name || !data.email) {
+		if(!obj.name || !obj.email) {
 			return {
 				statusCode: 400,
 				message: 'Missing data'
 			};
 		}
 
-		return service.execute(data.name, data.email);
+		return service.execute(obj.name, obj.email);
 	}
 }
 

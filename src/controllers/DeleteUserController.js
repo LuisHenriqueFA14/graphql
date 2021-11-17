@@ -1,17 +1,17 @@
 const { DeleteUserService } = require('../services/DeleteUserService');
 
 class DeleteUserController {
-	handle(data) {
+	handle(obj) {
 		const service = new DeleteUserService();
 
-		if(!data.id) {
+		if(!obj.id) {
 			return {
 				statusCode: 400,
 				message: 'Missing id'
 			};
 		}
 
-		return service.execute(data.id);
+		return service.execute(obj.id);
 	}
 }
 

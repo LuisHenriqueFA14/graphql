@@ -2,14 +2,20 @@ const { DataBase } = require("../data/data");
 
 class GetUserService {
 	execute(id) {
-		for(let j = 0; j <= DataBase.length; j += 1) {
+		for(let j = 0; j <= DataBase.length-1; j += 1) {
 			if(id == DataBase[j].id) {
-				return DataBase[j];
+				return {
+					statusCode: 200,
+					...DataBase[j],
+				}
 			}
 		}
 
 		return {
-			error: "User not found!"
+			statusCode: 404,
+			id: null,
+			name: null,
+			email: null,
 		}
 	}
 }
