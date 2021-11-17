@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"dev": "export GRAPHIQL=true; node src/server.js",
+	"start": "export GRAPHIQL=false; node src/server.js"
   },
   "author": "",
   "license": "ISC",

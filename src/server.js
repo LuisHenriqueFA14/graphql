@@ -14,7 +14,7 @@ const app = express();
 app.use('/graphql', graphqlHTTP({
 	schema: schema,
 	rootValue: {...resolvers.Query, ...resolvers.Mutation},
-	graphiql: true,
+	graphiql: process.env.GRAPHIQL === 'true',
 }));
 
 app.listen(4000, () => {

@@ -6,9 +6,11 @@ class CreateUserController {
 
 		if(!obj.name || !obj.email) {
 			return {
-				statusCode: 400,
-				message: 'Missing data'
-			};
+				statusCode: 401,
+				name: null,
+				email: null,
+				id: null
+			}
 		}
 
 		return service.execute(obj.name, obj.email);

@@ -2,19 +2,19 @@ const { DataBase } = require("../data/data");
 
 class DeleteUserService {
 	execute(id) {
-		for(let j = 0; j <= DataBase.length; j += 1) {
+		for(let j = 0; j <= DataBase.length-1; j += 1) {
 			if(id == DataBase[j].id) {
 				DataBase.pop(j);
 				return {
-					type: "message",
-					content: "User deleted successfully!"
+					statusCode: 200,
+					message: "User deleted successfully!"
 				}
 			}
 		}
 
 		return {
-			type: "error",
-			content: "User not found!"
+			statusCode: 404,
+			message: "User not found!"
 		}
 	}
 }

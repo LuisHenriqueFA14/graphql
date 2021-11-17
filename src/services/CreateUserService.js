@@ -3,18 +3,19 @@ const { v4: uuid } = require("uuid");
 
 class CreateUserService {
 	execute(name, email) {
-		for(let j = 0; j <= DataBase.length; j += 1) {
+		for(let j = 0; j <= DataBase.length-1; j += 1) {
 			if(email == DataBase[j].email) {
 				return {
-					message: {
-						type: "error",
-						content: "Email already in use",
-					}
+					statusCode: 400,
+					name: null,
+					email: null,
+					id: null,
 				}
 			}
 		}
 
 		const user = {
+			statusCode: 200,
 			name,
 			email,
 			id: uuid()

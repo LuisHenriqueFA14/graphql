@@ -13,11 +13,8 @@ class GetUserController {
 			}
 		}
 
-		const result = service.execute(obj.id);
-
-		console.log(result);
-
-		return result;
+		return service.execute(obj.id);
+;
 	}
 }
 
