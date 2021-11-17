@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	"dev": "export GRAPHIQL=true; node src/server.js",
-	"start": "export GRAPHIQL=false; node src/server.js"
+    "dev": "export GRAPHIQL=true; node src/server.js",
+    "start": "export GRAPHIQL=false; node src/server.js"
   },
   "author": "",
   "license": "ISC",
